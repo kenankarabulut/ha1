@@ -150,7 +150,7 @@ public class Calculator {
      * und das Ergebnis direkt angezeigt.
      */
     public void pressEqualsKey() {
-        if(!didBinaryOperation) {
+       // if(!didBinaryOperation) {
             var result = switch (latestOperation) {
                 case "+" -> latestValue + Double.parseDouble(screen);
                 case "-" -> latestValue - Double.parseDouble(screen);
@@ -162,8 +162,8 @@ public class Calculator {
             latestElement = Double.parseDouble(screen);
             screen = Double.toString(result);
             didBinaryOperation = true;
-        }
-
+        //}
+/*
         else if(didBinaryOperation){
             double newResult;
             switch(latestOperation){
@@ -184,6 +184,8 @@ public class Calculator {
             }
             screen = Double.toString(newResult);
         }
+
+ */
         if(screen.equals("Infinity")) screen = "Error";
         if(screen.endsWith(".0")) screen = screen.substring(0,screen.length()-2);
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
