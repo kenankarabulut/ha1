@@ -68,18 +68,18 @@ public class Calculator {
      * im Ursprungszustand ist.
      */
     public void pressClearKey() {
-        //if(!pressedClearKey) {
+        if(!pressedClearKey) {
             screen = "0";
-          //  pressedClearKey =true;
-        //}
-        //else {
+            pressedClearKey =true;
+        }
+        else {
             screen = "0";
             latestOperation = "";
             latestValue = 0.0;
-        //    pressedClearKey =false;
-          //  latestElement = 0.0;
-            //didBinaryOperation=false;
-        //}
+            pressedClearKey =false;
+            latestElement = 0.0;
+            didBinaryOperation=false;
+        }
     }
 
     /**
