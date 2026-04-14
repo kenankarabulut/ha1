@@ -127,6 +127,20 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
     @Test
+    @DisplayName("Should not do anything if the equals-key was pressed after not pressing any operation-key")
+    void testEqualReaction() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(7);
+        calc.pressEqualsKey();
+
+        String expected = "7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     @DisplayName("Should run the latest Operation after pressing the equals key multiple times")
     void testMultipleEqual(){
         Calculator calc = new Calculator();
